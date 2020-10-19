@@ -1,0 +1,11 @@
+section{
+    width: 360px;
+    border: 0.5em;
+    border-style: solid;
+    border-color: black;
+    padding: 1em;
+}
+button{
+    width: 13em;
+    height: 2em;
+}
