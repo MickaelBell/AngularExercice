@@ -1,0 +1,18 @@
+<ul>
+  <li>Pommmes de terre</li>
+  <li [ngStyle] = "{backgroundColor: ieThisIngredientVital ? 'red': 'yellow'}">Raclette</li>
+  <li>Jambom</li>
+  <li [ngClass] = "{'vital' : ieThisIngredientVital}">Cornichons</li>
+  <li>Chou-fleur</li>
+</ul>
+<hr>
+<ul *ngIf="displayGuestList">
+  <li>Brenda</li>
+  <li>Dylan</li>
+  <li>Jean-Mi</li>
+  <li>Kylie</li>
+</ul>
+<hr>
+<ul *ngFor="let song of songList">
+  <li>{{ song }}</li>
+</ul>
