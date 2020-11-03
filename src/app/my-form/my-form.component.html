@@ -1,0 +1,20 @@
+<li><a [routerLink]="['/user-profile']"><button>User</button></a></li>
+<li><a [routerLink]="['/sign-up']"><button>Sign-up</button></a></li>
+<div id="divForm">
+  <form (ngSubmit)="myForm.valid" #myForm="ngForm">
+    <label for="title">Title</label><br>
+    <input type='text' name='text' text required><br>
+    <label for="quantity">Quantity</label><br>
+    <input type='number' name="number" number required><br>
+    <label for="orderDate">Oder Date</label><br>
+    <input type="date" name="date" date required><br>
+    <label for="userEmail">Your Email</label><br>
+    <input type="email" name="userEmail" ngModel#userMail="ngModel" email required maxlength="20"><br>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+    <div>
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+</div>

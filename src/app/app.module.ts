@@ -9,6 +9,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { MenuComponent } from './menu/menu.component';
 import { ListTestComponent } from './list-test/list-test.component';
+import { MyFormComponent } from './my-form/my-form.component';
+import {HttpClientModule}from'@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,12 +19,14 @@ import { ListTestComponent } from './list-test/list-test.component';
     UserProfileComponent,
     SignUpComponent,
     MenuComponent,
-    ListTestComponent
+    ListTestComponent,
+    MyFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

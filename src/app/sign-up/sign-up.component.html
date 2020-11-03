@@ -1,2 +1,62 @@
-<p>sign-up works!</p>
-<li><a [routerLink]="['/user-profile']"><button>User</button></a></li>
+<div>
+  <li><a [routerLink]="['/user-profile']"><button>User</button></a></li>
+</div>
+
+<div>
+  <form #myForm="ngForm" (ngSubmit)="myForm.valid" class="form-group">
+
+    <label for="title">Title</label><br>
+    <input type='text' name='text' ngModel #text="ngModel" text required><br>
+
+    <div *ngIf="myForm.submitted && text.errors.required">
+      <h3>Text requis</h3>
+    </div>
+
+    <label for="userEmail">Votre Email :</label><br>
+    <input type="email" name="userEmail" ngModel #userMail="ngModel" email required minlength="3"><br>
+
+    <div *ngIf="myForm.submitted && userMail.invalid">
+
+      <div *ngIf="userMail.errors.required">
+        <h3>Email requis</h3>
+      </div>
+
+      <div *ngIf="userMail.errors.email">
+        <h3>l'Email n'est pas valide</h3>
+      </div>
+    </div>
+
+    <label for="userPassword">Votre Mot de Passe :</label><br>
+    <input type="password" name="userPassword" ngModel
+            minlength="6" required #userPwd="ngModel">
+
+    <div *ngIf="myForm.submitted && userPwd.invalid">
+
+      <div *ngIf="userPwd.errors.required">
+        <h3>Mot de Passe requis</h3>
+      </div>
+
+      <div *ngIf="userPwd.errors.minlength">
+        <h3>le Mot de Passe doit avoir 6 carctères minmum</h3>
+      </div>
+
+    </div>
+
+
+
+
+
+    <div *ngIf="myForm.submitted && userMail.valid
+                                    && userPwd.valid">
+      <h3>Login Validé</h3>
+    </div>
+
+
+    <br>
+    <div>
+      <button type="submit">Se Connecter</button>
+    </div>
+
+
+  </form>
+</div>

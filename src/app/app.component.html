@@ -1,7 +1,16 @@
+<header>
+  <div class="container">
 
-<a [routerLink]="['/menu']"><button>Menu</button></a>
-<router-outlet></router-outlet>
+    <a routerLink="/">Acceuil</a>
 
-<!-- <app-user-profile></app-user-profile> -->
+    <nav>
+      <ul>
+        <li><a routerLink="/menu"><button>Menu</button></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
